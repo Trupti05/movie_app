@@ -1,12 +1,12 @@
 import { icons } from "@/constants/icons";
 import React from "react";
-import { Image, Text, TextInput, View } from "react-native";
+import { Image, TextInput, View } from "react-native";
 
 interface Props{
     placeholder: string;
     onPress?: () => void;
-    value: string;
-    onChangeText: (text: string) => void;
+    value?: string;
+    onChangeText?: (text: string) => void;
 }
 const SearchBar = ({ placeholder, onPress, value, onChangeText}: Props) => {
   return (
@@ -23,12 +23,11 @@ const SearchBar = ({ placeholder, onPress, value, onChangeText}: Props) => {
       <TextInput
         onPress={onPress}
         placeholder={placeholder}
-        value=""
+        value={value}
         onChangeText={onChangeText}
         placeholderTextColor="#a8b5db"
         className="flex-1 mx-3 text-white"
       />
-      <Text className="text-white">Search</Text>
     </View>
   );
 };
